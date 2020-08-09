@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.16)
+project(myco_cv)
+find_package(OpenCV REQUIRED)
+include_directories(${OpenCV_INCLUDE_DIRS})
+set(CMAKE_CXX_STANDARD 14)
+add_executable(myco_cv lib/SURF.h tests/main_check.cpp main.cpp)
+target_link_libraries( myco_cv ${OpenCV_LIBS} )
